@@ -12,16 +12,12 @@ import {
 import { User } from '../types'
 import { useApi } from './api/ApiProvider'
 import { useSnackbar } from '@sector-eleven-ltd/cosmos-core'
+import { NEXT_PUBLIC_API_KEY } from '@/enviornment'
 
 let fbToken: IdTokenResult | undefined
 
 const firebaseOptions: FirebaseOptions = {
-    apiKey: process.env.NEXT_PUBLIC_API_KEY,
-    appId: process.env.NEXT_PUBLIC_APP_ID,
-    authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
-    measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
-    messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
-    projectId: process.env.NEXT_PUBLIC_PROJECT_ID
+    apiKey: NEXT_PUBLIC_API_KEY
 }
 
 const firebaseApp = initializeApp(firebaseOptions)

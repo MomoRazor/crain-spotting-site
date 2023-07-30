@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { getFirebaseToken } from '../FirebaseAuthProvider'
-import { REACT_APP_API_URL } from '@/enviornment'
+import { NEXT_PUBLIC_API_URL } from '@/enviornment'
 
 const authHeaders = async () => {
     let token = await getFirebaseToken()
@@ -15,7 +15,7 @@ const authHeaders = async () => {
 }
 
 export const axios11 = axios.create({
-    baseURL: REACT_APP_API_URL
+    baseURL: NEXT_PUBLIC_API_URL
 })
 
 axios11.interceptors.request.use(async (config) => {
